@@ -1,0 +1,29 @@
+{
+    "name": "designer-exercice",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build"
+    },
+    "author": "Konstantinos Tsamouras",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "webpack-stream": "^5.2.1"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.0",
+        "bootstrap": "^4.4.1"
+    }
+}

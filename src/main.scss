@@ -1,0 +1,152 @@
+/*
+- I will use the BEM methodology to organize any additional custom styles for the exercice.
+- I am using autoprefixer inside of gulp to take care of all the web browser prefixes.
+ */
+
+// Globally override default bootstrap variables
+$theme-colors: (
+    primary: #8F547C,
+    secondary: #00A4A0,
+    medium: #6c757d
+);
+$body-bg: #fafafa;
+$border-radius: 0;
+
+// Required parts of bootstrap
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+
+// Custom styles
+html, body {
+    min-width: 1080px;
+    min-height: 100vh;
+}
+.navbar {
+    $link-color: $white;
+    &__icon-button {
+        // A small padding to make it easier for the user to click the icon-button
+        padding: $spacer * .25;
+        margin: 0 $spacer * .5;
+
+        color: $link-color;
+        &:hover {
+            color: darken($link-color, 15%);
+        }
+    }
+    &__user-picture {
+        padding: $spacer * .25;
+        margin: 0 0 0 ($spacer * 1.5);
+
+        color: $link-color;
+        &:hover {
+            text-decoration: none;
+            color: darken($link-color, 15%);
+        }
+        > img {
+            background-color: $gray-500;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 0 ($spacer * .5) 0 0;
+        }
+    }
+    &--secondary {
+        opacity: .54;
+    }
+    &--badge {
+        position: relative;
+        margin: 0 $spacer 0 0;
+        > .badge {
+            position: absolute;
+            top: -$spacer * .25;
+            right: -$spacer * 1.125;
+
+            font-family: $font-family-base;
+            font-weight: $font-weight-bolder;
+        }
+    }
+}
+
+.header {
+    &__input-group {
+        border-bottom: 1px solid $gray-600;
+    }
+    &__filter {
+        border: 1px solid $gray-600; 
+        i:first-child {
+            padding: $spacer * .25;
+            background: theme-color("primary");
+            color: $white;
+        }
+        span {
+            color: $gray-700; 
+            font-size: $small-font-size;
+        }
+        i:last-child {
+            padding: $spacer * .25;
+
+            color: $gray-600; 
+        }
+    }
+    &__input {
+        border: none;
+        padding: $spacer * .25;
+
+        font-weight: $font-weight-normal;
+        &::placeholder {
+            color: $gray-500;
+        }
+    }
+    &__icon-button {
+        padding: $spacer * .25;
+
+        color: $gray-600; 
+        &:hover {
+            color: darken($gray-600, 15%);
+        }
+    }
+}
+.user-actions {
+    button {
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+    }
+}
+
+// Only import optional parts of bootstrap that we need for optimization puproses
+@import "./node_modules/bootstrap/scss/root";
+@import "./node_modules/bootstrap/scss/reboot";
+@import "./node_modules/bootstrap/scss/type";
+@import "./node_modules/bootstrap/scss/images";
+@import "./node_modules/bootstrap/scss/code";
+@import "./node_modules/bootstrap/scss/grid";
+@import "./node_modules/bootstrap/scss/tables";
+@import "./node_modules/bootstrap/scss/forms";
+@import "./node_modules/bootstrap/scss/buttons";
+@import "./node_modules/bootstrap/scss/transitions";
+@import "./node_modules/bootstrap/scss/dropdown";
+@import "./node_modules/bootstrap/scss/button-group";
+@import "./node_modules/bootstrap/scss/input-group";
+@import "./node_modules/bootstrap/scss/custom-forms";
+@import "./node_modules/bootstrap/scss/nav";
+@import "./node_modules/bootstrap/scss/navbar";
+@import "./node_modules/bootstrap/scss/card";
+@import "./node_modules/bootstrap/scss/breadcrumb";
+@import "./node_modules/bootstrap/scss/pagination";
+@import "./node_modules/bootstrap/scss/badge";
+@import "./node_modules/bootstrap/scss/jumbotron";
+@import "./node_modules/bootstrap/scss/alert";
+@import "./node_modules/bootstrap/scss/progress";
+@import "./node_modules/bootstrap/scss/media";
+@import "./node_modules/bootstrap/scss/list-group";
+@import "./node_modules/bootstrap/scss/close";
+@import "./node_modules/bootstrap/scss/toasts";
+@import "./node_modules/bootstrap/scss/modal";
+@import "./node_modules/bootstrap/scss/tooltip";
+@import "./node_modules/bootstrap/scss/popover";
+@import "./node_modules/bootstrap/scss/carousel";
+@import "./node_modules/bootstrap/scss/spinners";
+@import "./node_modules/bootstrap/scss/utilities";
+@import "./node_modules/bootstrap/scss/print";
+
