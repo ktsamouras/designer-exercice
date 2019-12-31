@@ -6,16 +6,50 @@
 // Globally override default bootstrap variables
 $theme-colors: (
     primary: #8F547C,
-    secondary: #00A4A0,
-    medium: #6c757d
+    secondary: #00B8B4,
+    secondary-light: #00D3CD,
+    secondary-dark: #00A4A0,
+    medium: #6c757d,
+    light: #e9ecef,
+    yellow: #FCD600,
+    yellow-light: #FEFCBD,
+    yellow-dark: #FBD100,
+    orange: #FFA24C,
+    orange-light: #FFB16A,
+    blue: #54C0F2,
+    blue-light: #72CBF5,
+    purple: #894268,
+    purple-light: #9A4A75
 );
+
 $body-bg: #fafafa;
-$border-radius: 0;
+$btn-border-radius: 0;
+$progress-border-radius: 0;
+
+$orange: #F9AD2D;
+$red: #EA5F5C;
+$green: #00A843;
+
+// function to create all the class helpers for opacities
+$opacities: 0 1 2 3 4 5 6 7 8 9;
+@each $opacity in $opacities {
+    .opacity-#{$opacity} {
+        opacity: $opacity / 10 !important;
+    }
+}
+// function to create additional width helpers (except 0 50 and 100 that already exist from bootstrap)
+$widths: 10 20 25 30 40 60 70 75 80 90;
+@each $width in $widths {
+    .w-#{$width} {
+        width: percentage($width / 100);
+    }
+}
 
 // Required parts of bootstrap
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
+
 
 // Custom styles
 html, body {
@@ -114,39 +148,123 @@ html, body {
     }
 }
 
-// Only import optional parts of bootstrap that we need for optimization puproses
+.calendar {
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    grid-template-rows: 64px repeat(6, 36px);
+    grid-gap: 1px;
+
+    text-align: center;
+    font-weight: $font-weight-bold;
+    background-color: $gray-300;
+    color: $gray-700;
+    
+    > div:nth-child(-n + 2) {
+        background-color: $gray-200;
+    }
+    > div:nth-child(3), 
+    > div:nth-child(5), 
+    > div:nth-child(7), 
+    > div:nth-child(9), 
+    > div:nth-child(11), 
+    > div:nth-child(13) {
+        background-color: $white;
+    }
+    &__month {
+        display: grid;
+        grid-template-rows: 31px;
+        grid-template-columns: 1fr;
+        border-bottom: 1px solid $gray-400;
+    }
+    &__dates {
+        display: grid;
+        grid-template-columns: repeat(28, 1fr);
+        grid-template-rows: 32px;
+        grid-gap: 1px;
+
+        background-color: $gray-400;
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: $gray-200;
+            &:nth-child(19) {
+                background-color: theme-color("yellow-light");
+            }
+        }
+    }
+    &__gray {
+        > div > .progress {
+            @extend .opacity-8;
+        }
+    }
+    &__gray, &__colors {
+        display: grid;
+        grid-template-columns: repeat(28, 1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 1px;
+
+        background-color: $gray-200;
+        > div {
+            position: relative;
+
+            background-color: #fff;
+            &:nth-child(19) {
+                background-color: theme-color("yellow-light");
+            }
+            > .progress {
+                height: auto;
+                margin: 2px 1px;
+
+                position: absolute;
+                z-index: 1100;
+                top: 0; right: 0; bottom: 0; left: 0;
+                
+                > span {
+                    position: absolute;
+                    left: 0; right: 0;
+                    padding: 6px 3px;
+
+                    @extend .text-truncate;
+                    color: $white;
+                }
+                > .marked {
+                    $size: 20px;
+                    position: absolute;
+                    top: 0; left: 0;
+
+                    height: 0;
+                    width: 0;
+                    border-right: $size solid transparent;
+                    &.orange {
+                        border-top: $size solid $orange;
+                    }
+                    &.red {
+                        border-top: $size solid $red;
+                    }
+                    &.green {
+                        border-top: $size solid $green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Only import optional parts of bootstrap that we need (for optimization puproses)
 @import "./node_modules/bootstrap/scss/root";
 @import "./node_modules/bootstrap/scss/reboot";
 @import "./node_modules/bootstrap/scss/type";
-@import "./node_modules/bootstrap/scss/images";
-@import "./node_modules/bootstrap/scss/code";
 @import "./node_modules/bootstrap/scss/grid";
-@import "./node_modules/bootstrap/scss/tables";
-@import "./node_modules/bootstrap/scss/forms";
 @import "./node_modules/bootstrap/scss/buttons";
-@import "./node_modules/bootstrap/scss/transitions";
-@import "./node_modules/bootstrap/scss/dropdown";
-@import "./node_modules/bootstrap/scss/button-group";
 @import "./node_modules/bootstrap/scss/input-group";
 @import "./node_modules/bootstrap/scss/custom-forms";
 @import "./node_modules/bootstrap/scss/nav";
 @import "./node_modules/bootstrap/scss/navbar";
-@import "./node_modules/bootstrap/scss/card";
-@import "./node_modules/bootstrap/scss/breadcrumb";
-@import "./node_modules/bootstrap/scss/pagination";
 @import "./node_modules/bootstrap/scss/badge";
-@import "./node_modules/bootstrap/scss/jumbotron";
-@import "./node_modules/bootstrap/scss/alert";
 @import "./node_modules/bootstrap/scss/progress";
-@import "./node_modules/bootstrap/scss/media";
-@import "./node_modules/bootstrap/scss/list-group";
-@import "./node_modules/bootstrap/scss/close";
-@import "./node_modules/bootstrap/scss/toasts";
-@import "./node_modules/bootstrap/scss/modal";
-@import "./node_modules/bootstrap/scss/tooltip";
 @import "./node_modules/bootstrap/scss/popover";
-@import "./node_modules/bootstrap/scss/carousel";
-@import "./node_modules/bootstrap/scss/spinners";
 @import "./node_modules/bootstrap/scss/utilities";
-@import "./node_modules/bootstrap/scss/print";
 

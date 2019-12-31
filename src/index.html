@@ -23,7 +23,7 @@
                     I will create a class for them. -->
                     <a class="navbar__icon-button" href="#">
                         <i class="fas fa-clock navbar--badge">
-                            <span class="badge badge-pill badge-secondary">2</span>
+                            <span class="badge badge-pill badge-secondary-dark">2</span>
                         </i>
                     </a>
                     <a class="navbar__icon-button navbar--secondary" href="#"><i class="fas fa-comments"></i></a>
@@ -56,14 +56,14 @@
                 </div>
                 <div class="row user-actions">
                     <div class="col-6">
-                        <button type="button" class="btn btn-secondary mr-3">add</button>
-                        <button type="button" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></button>
-                        <button type="button" class="btn btn-secondary">today</button>
-                        <button type="button" class="btn btn-secondary mr-3"><i class="fas fa-arrow-right"></i></button>
+                        <button type="button" class="btn btn-secondary-dark mr-3">add</button>
+                        <button type="button" class="btn btn-secondary-dark"><i class="fas fa-arrow-left"></i></button>
+                        <button type="button" class="btn btn-secondary-dark">today</button>
+                        <button type="button" class="btn btn-secondary-dark mr-3"><i class="fas fa-arrow-right"></i></button>
                         <button type="button" class="btn btn-light active">month</button>
-                        <button type="button" class="btn btn-outline-secondary border-0">week</button>
-                        <button type="button" class="btn btn-outline-secondary border-0"><i class="fas fa-expand-alt"></i></button>
-                        <button type="button" class="btn btn-outline-secondary border-0"><i class="fas fa-compress-alt"></i></button>
+                        <button type="button" class="btn btn-outline-secondary-dark border-0">week</button>
+                        <button type="button" class="btn btn-outline-secondary-dark border-0"><i class="fas fa-expand-alt"></i></button>
+                        <button type="button" class="btn btn-outline-secondary-dark border-0"><i class="fas fa-compress-alt"></i></button>
                     </div>
                     <div class="col-auto">
                         <button type="button" class="btn btn-outline-medium border-0">
@@ -72,12 +72,12 @@
                             <i class="fas fa-caret-down fa-sm"></i>
                         </button>
                         <button type="button" class="btn btn-outline-medium border-0">
-                            <i class="fas fa-filter fa-sm"></i>
+                            <i class="fas fa-bars fa-sm"></i>
                             <span class="text-capitalize">group by</span>
                             <i class="fas fa-caret-down fa-sm"></i>
                         </button>
                         <button type="button" class="btn btn-outline-medium border-0">
-                            <i class="fas fa-filter fa-sm"></i>
+                            <i class="fas fa-star fa-sm"></i>
                             <span class="text-capitalize">favorites</span>
                             <i class="fas fa-caret-down fa-sm"></i>
                         </button>
@@ -89,13 +89,394 @@
                     </div>
                 </div>
             </header>
-            <main class="row">
-                <div class="col">
-                    <div class="d-flex flex-row align-items-center">
-                    </div>
-                </div>
-            </main>
         </div>
+        <main>
+            <div class="calendar">
+                <div class="d-flex align-items-center justify-content-center">Default gantt view for x_trez</div> 
+                <div>
+                    <div class="calendar__month">
+                        <span class="py-1">February 2019</span>
+                    </div>
+                    <div class="calendar__dates">
+                        <div>01</div>
+                        <div>02</div>
+                        <div>03</div>
+                        <div>04</div>
+                        <div>05</div>
+                        <div>06</div>
+                        <div>07</div>
+                        <div>08</div>
+                        <div>09</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                        <div>13</div>
+                        <div>14</div>
+                        <div>15</div>
+                        <div>16</div>
+                        <div>17</div>
+                        <div>18</div>
+                        <div>19</div>
+                        <div>20</div>
+                        <div>21</div>
+                        <div>22</div>
+                        <div>23</div>
+                        <div>24</div>
+                        <div>25</div>
+                        <div>26</div>
+                        <div>27</div>
+                        <div>28</div>
+                    </div>
+                </div> 
+                <div class="d-flex align-items-center">
+                    <i class="far fa-minus-square ml-2 mr-3"></i>
+                    Primary
+                </div> 
+                <div class="calendar__gray">
+                    <div></div>
+                    <div>
+                        <div class="progress rounded-left" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress">
+                            <div class="progress-bar w-100 bg-dark opacity-2">2</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded-right" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded" style="right: -100%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded-left" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                        <div class="progress" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-2">2</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-3">3</div>
+                        </div>
+                        <div class="progress" style="left: 50%; right: -100%;">
+                            <div class="progress-bar w-100 bg-dark opacity-4">4</div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div>
+                        <div class="progress" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-3">3</div>
+                        </div>
+                        <div class="progress" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-2">2</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-3">3</div>
+                        </div>
+                        <div class="progress" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-4">4</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-5">5</div>
+                        </div>
+                        <div class="progress" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-4">4</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress" style="right: -460%;">
+                            <div class="progress-bar w-100 bg-dark opacity-3">3</div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress" style="left: 50%; right: -100%;">
+                            <div class="progress-bar w-100 bg-dark opacity-2">2</div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded-right" style="right: -50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded" style="left: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded" style="right: 50%;">
+                            <div class="progress-bar w-100 bg-dark opacity-1">1</div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+                <div></div> 
+                <div class="calendar__colors">
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-orange-light" style="left: 50%; right: -50%;">
+                            <span>a</span>
+                            <div class="progress-bar w-60 bg-orange"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%; right: -50%;">
+                            <span>b</span>
+                            <div class="progress-bar w-20 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="right: -100%;">
+                            <span>a</span>
+                            <div class="marked orange"></div>
+                            <div class="progress-bar w-80 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light">
+                            <span>k</span>
+                            <div class="progress-bar w-50 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded bg-orange-light" style="right: -250%;">
+                            <span>dmo</span>
+                            <div class="progress-bar w-30 bg-orange"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%; right: -50%;">
+                            <span>a</span>
+                            <div class="marked red"></div>
+                            <div class="progress-bar w-70 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%;">
+                            <span>a</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="right: 50%;">
+                            <span>...</span>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+                <div></div>
+                <div class="calendar__colors">
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light">
+                            <span>c</span>
+                            <div class="progress-bar w-50 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light opacity-5" style="left: 50%; right: -50%;">
+                            <span>d</span>
+                            <div class="progress-bar w-90 bg-secondary "></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%; right: -100%;">
+                            <span>agrnlgkrfff</span>
+                            <div class="progress-bar w-80 bg-secondary "></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-blue-light" style="right: -815%;">
+                            <span>e</span>
+                            <div class="progress-bar w-80 bg-blue "></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+                <div></div>
+                <div class="calendar__colors">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-purple-light" style="right: -965%;">
+                            <span>a</span>
+                            <div class="progress-bar w-75 bg-purple"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+                <div></div>
+                <div class="calendar__colors">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%; right: -50%;">
+                            <span>a</span>
+                            <div class="marked green"></div>
+                            <div class="progress-bar w-30 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light" style="left: 50%; right: -50%;">
+                            <span>a</span>
+                            <div class="progress-bar w-70 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-yellow" style="left: 50%; right: -965%;">
+                            <span>a</span>
+                            <div class="progress-bar progress-bar-striped w-40 bg-yellow-dark"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+                <div></div>
+                <div class="calendar__colors">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="progress rounded bg-secondary-light">
+                            <span>a</span>
+                            <div class="progress-bar w-20 bg-secondary"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+            </div>
+        </main>
+
         <script async src="./main.js"></script>
     </body>
 </html>
