@@ -1,9 +1,8 @@
 /*
-- I will use the BEM methodology to organize any additional custom styles for the exercice.
-- I am using autoprefixer inside of gulp to take care of all the web browser prefixes.
- */
+     Globally override default bootstrap variables
+*/
 
-// Globally override default bootstrap variables
+// Redefine the colors for the exercice
 $theme-colors: (
     primary: #8F547C,
     secondary: #00B8B4,
@@ -22,22 +21,18 @@ $theme-colors: (
     purple-light: #9A4A75
 );
 
-$body-bg: #fafafa;
+$body-bg: #FAFAFA;
 $btn-border-radius: 0;
 $progress-border-radius: 0;
 
-$orange: #F9AD2D;
-$red: #EA5F5C;
-$green: #00A843;
-
-// function to create all the class helpers for opacities
+// Function to create all the class helpers for opacities
 $opacities: 0 1 2 3 4 5 6 7 8 9;
 @each $opacity in $opacities {
     .opacity-#{$opacity} {
         opacity: $opacity / 10 !important;
     }
 }
-// function to create additional width helpers (except 0 50 and 100 that already exist from bootstrap)
+// Function to create additional width helpers (except for 0, 50 and 100 that already exists in Bootstrap)
 $widths: 10 20 25 30 40 60 70 75 80 90;
 @each $width in $widths {
     .w-#{$width} {
@@ -51,18 +46,24 @@ $widths: 10 20 25 30 40 60 70 75 80 90;
 @import "./node_modules/bootstrap/scss/mixins";
 
 
-// Custom styles
+/* 
+    Custom styles - I did not chose to separate my styles in different files since it's a small exercice.
+*/
+
+// I am setting these based on the requirements.
 html, body {
     min-width: 1080px;
     min-height: 100vh;
 }
+
 .navbar {
+    // I only adjust the variable for links inside of the navbar
     $link-color: $white;
+
     &__icon-button {
-        // A small padding to make it easier for the user to click the icon-button
+        // I will generally add some padding to make it easier for the user to click on elements
         padding: $spacer * .25;
         margin: 0 $spacer * .5;
-
         color: $link-color;
         &:hover {
             color: darken($link-color, 15%);
@@ -71,18 +72,18 @@ html, body {
     &__user-picture {
         padding: $spacer * .25;
         margin: 0 0 0 ($spacer * 1.5);
-
         color: $link-color;
         &:hover {
             text-decoration: none;
             color: darken($link-color, 15%);
         }
         > img {
-            background-color: $gray-500;
             width: 24px;
             height: 24px;
             border-radius: 50%;
+
             margin: 0 ($spacer * .5) 0 0;
+            background-color: $gray-500;
         }
     }
     &--secondary {
@@ -90,11 +91,12 @@ html, body {
     }
     &--badge {
         position: relative;
+
         margin: 0 $spacer 0 0;
         > .badge {
             position: absolute;
-            top: -$spacer * .25;
-            right: -$spacer * 1.125;
+            top: -4px;
+            right: -18px;
 
             font-family: $font-family-base;
             font-weight: $font-weight-bolder;
@@ -108,25 +110,24 @@ html, body {
     }
     &__filter {
         border: 1px solid $gray-600; 
-        i:first-child {
+        > i:first-child {
             padding: $spacer * .25;
             background: theme-color("primary");
             color: $white;
         }
-        span {
+        > span {
             color: $gray-700; 
             font-size: $small-font-size;
         }
-        i:last-child {
+        > i:last-child {
             padding: $spacer * .25;
-
             color: $gray-600; 
         }
     }
     &__input {
         border: none;
-        padding: $spacer * .25;
 
+        padding: $spacer * .25;
         font-weight: $font-weight-normal;
         &::placeholder {
             color: $gray-500;
@@ -134,7 +135,6 @@ html, body {
     }
     &__icon-button {
         padding: $spacer * .25;
-
         color: $gray-600; 
         &:hover {
             color: darken($gray-600, 15%);
@@ -150,6 +150,7 @@ html, body {
 
 .calendar {
     display: grid;
+
     grid-template-columns: 20vw 1fr;
     grid-template-rows: 64px repeat(6, 36px);
     grid-gap: 1px;
@@ -158,7 +159,6 @@ html, body {
     font-weight: $font-weight-bold;
     background-color: $gray-300;
     color: $gray-700;
-    
     > div:nth-child(-n + 2) {
         background-color: $gray-200;
     }
@@ -172,12 +172,14 @@ html, body {
     }
     &__month {
         display: grid;
+
         grid-template-rows: 31px;
         grid-template-columns: 1fr;
         border-bottom: 1px solid $gray-400;
     }
     &__dates {
         display: grid;
+
         grid-template-columns: repeat(28, 1fr);
         grid-template-rows: 32px;
         grid-gap: 1px;
@@ -201,6 +203,7 @@ html, body {
     }
     &__gray, &__colors {
         display: grid;
+
         grid-template-columns: repeat(28, 1fr);
         grid-template-rows: 1fr;
         grid-gap: 1px;
@@ -214,23 +217,29 @@ html, body {
                 background-color: theme-color("yellow-light");
             }
             > .progress {
-                height: auto;
-                margin: 2px 1px;
-
                 position: absolute;
                 z-index: 1100;
                 top: 0; right: 0; bottom: 0; left: 0;
-                
+
+                height: auto;
+
+                margin: 2px 1px;
                 > span {
                     position: absolute;
                     left: 0; right: 0;
-                    padding: 6px 3px;
 
+                    padding: 6px 3px;
+                    // Truncate the text if it's too long inside of the timeline horizontal bars
                     @extend .text-truncate;
                     color: $white;
                 }
                 > .marked {
+                    // The marked items use different colors so I defined them here
+                    $orange: #F9AD2D;
+                    $red: #EA5F5C;
+                    $green: #00A843;
                     $size: 20px;
+
                     position: absolute;
                     top: 0; left: 0;
 
@@ -252,16 +261,12 @@ html, body {
     }
 }
 
-
-// Only import optional parts of bootstrap that we need (for optimization puproses)
+// Only import optional parts of bootstrap that we need
 @import "./node_modules/bootstrap/scss/root";
 @import "./node_modules/bootstrap/scss/reboot";
 @import "./node_modules/bootstrap/scss/type";
 @import "./node_modules/bootstrap/scss/grid";
 @import "./node_modules/bootstrap/scss/buttons";
-@import "./node_modules/bootstrap/scss/input-group";
-@import "./node_modules/bootstrap/scss/custom-forms";
-@import "./node_modules/bootstrap/scss/nav";
 @import "./node_modules/bootstrap/scss/navbar";
 @import "./node_modules/bootstrap/scss/badge";
 @import "./node_modules/bootstrap/scss/progress";
