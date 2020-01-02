@@ -36,6 +36,7 @@ gulp.task('sass', () => {
     ], { since: gulp.lastRun('sass') })
         .pipe(sass())
         .pipe(autoprefixer())
+        .pipe(minifyCss())
         .pipe(gulp.dest(dist_assets_folder))
         .pipe(browserSync.stream());
 });
